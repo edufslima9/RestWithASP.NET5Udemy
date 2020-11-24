@@ -12,6 +12,7 @@ using RestWithASPNETUdemy.Repository.Implementations;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using RestWithASPNETUdemy.Repository.Generic;
 
 namespace RestWithASPNETUdemy
 {
@@ -49,9 +50,10 @@ namespace RestWithASPNETUdemy
 
             // Dependency Injection
             services.AddScoped<IPersonBusiness, PersonBusinessImpl>();
-            services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
+            //services.AddScoped<IRepository, PersonRepositoryImpl>();
             services.AddScoped<IBookBusiness, BookBusinessImpl>();
-            services.AddScoped<IBookRepository, BookRepositoryImpl>();
+            //services.AddScoped<IBookRepository, BookRepositoryImpl>();
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

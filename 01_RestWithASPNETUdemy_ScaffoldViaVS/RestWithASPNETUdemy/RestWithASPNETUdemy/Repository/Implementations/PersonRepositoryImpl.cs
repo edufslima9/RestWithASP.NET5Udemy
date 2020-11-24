@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace RestWithASPNETUdemy.Repository.Implementations
 {
-    public class PersonRepositoryImpl : IPersonRepository
+    public class PersonRepositoryImpl : IRepository
     {
         private MySQLContext _context;
 
